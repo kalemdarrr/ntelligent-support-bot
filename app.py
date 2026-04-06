@@ -11,22 +11,15 @@ from src.inference import IntentClassifier, get_bot_response
 def inject_professional_css():
     st.markdown("""
         <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-        
-        html, body, [class*="css"] {
-            font-family: 'Inter', sans-serif;
-        }
-        
         /* Hide default streamlit elements */
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
         header {visibility: hidden;}
         
-        /* Header styling */
+        /* Header styling using native colors */
         .brand-header {
             font-size: 1.8rem;
             font-weight: 600;
-            color: #1a1f36;
             margin-bottom: 0.2rem;
             display: flex;
             align-items: center;
@@ -34,30 +27,29 @@ def inject_professional_css():
         
         .brand-subtitle {
             font-size: 0.95rem;
-            color: #697386;
+            opacity: 0.8;
             margin-bottom: 2rem;
             font-weight: 400;
         }
         
-        /* Diagnostic Pill for intent */
+        /* Diagnostic Pill for intent using native colors */
         .diagnostic-pill {
             display: inline-flex;
             align-items: center;
-            background-color: #f3f4f6;
-            border: 1px solid #e5e7eb;
-            color: #4b5563;
+            background-color: rgba(128, 128, 128, 0.1);
+            border: 1px solid rgba(128, 128, 128, 0.2);
             font-size: 0.75rem;
             font-weight: 500;
-            padding: 3px 10px;
+            padding: 4px 12px;
             border-radius: 12px;
-            margin-top: 4px;
+            margin-top: 8px;
             letter-spacing: 0.025em;
         }
         
         .confidence-indicator {
             height: 6px;
             border-radius: 3px;
-            background-color: #e5e7eb;
+            background-color: rgba(128, 128, 128, 0.2);
             width: 100px;
             margin-left: 8px;
             overflow: hidden;
@@ -67,27 +59,19 @@ def inject_professional_css():
         
         .confidence-fill {
             height: 100%;
-            background-color: #6366f1;
-        }
-        
-        /* Customizing chat inputs and UI */
-        .stChatInputContainer {
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            background-color: #0078D4;
         }
         
         /* Sidebar styling */
         .sidebar-title {
             font-weight: 600;
-            color: #111827;
             font-size: 1rem;
             margin-top: 1.5rem;
         }
         
         .sidebar-text {
             font-size: 0.85rem;
-            color: #4b5563;
+            opacity: 0.85;
             line-height: 1.5;
         }
         </style>
@@ -148,8 +132,6 @@ def main():
             st.markdown(msg["content"])
             if msg.get("meta") and msg["role"] == "assistant":
                 intent, conf = msg["meta"]
-                
-                # Professional diagnostic pill instead of loud progress bar
                 fill_width = int(conf * 100)
                 html_str = f"""
                 <div class="diagnostic-pill">
@@ -157,7 +139,7 @@ def main():
                     <div class="confidence-indicator">
                         <div class="confidence-fill" style="width: {fill_width}%;"></div>
                     </div>
-                    <span style="margin-left:6px; color:#9ca3af; font-size:10px;">{fill_width}%</span>
+                    <span style="margin-left:6px; font-size:10px; opacity:0.7;">{fill_width}%</span>
                 </div>
                 """
                 st.markdown(html_str, unsafe_allow_html=True)
@@ -177,7 +159,6 @@ def main():
         # Display bot msg
         with st.chat_message("assistant", avatar="💬"):
             st.markdown(response)
-            
             fill_width = int(confidence * 100)
             html_str = f"""
             <div class="diagnostic-pill">
@@ -185,7 +166,7 @@ def main():
                 <div class="confidence-indicator">
                     <div class="confidence-fill" style="width: {fill_width}%;"></div>
                 </div>
-                <span style="margin-left:6px; color:#9ca3af; font-size:10px;">{fill_width}%</span>
+                <span style="margin-left:6px; font-size:10px; opacity:0.7;">{fill_width}%</span>
             </div>
             """
             st.markdown(html_str, unsafe_allow_html=True)
