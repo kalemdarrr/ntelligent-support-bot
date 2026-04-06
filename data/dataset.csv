@@ -1,0 +1,324 @@
+text,label
+"hi",greeting
+"hello",greeting
+"hey",greeting
+"hey there",greeting
+"good morning",greeting
+"good afternoon",greeting
+"good evening",greeting
+"hi support",greeting
+"hello customer service",greeting
+"hey support team",greeting
+"hi i need help",greeting
+"hello i have a question",greeting
+"hey can you help me",greeting
+"hi there i have an issue",greeting
+"hello can you assist me",greeting
+"good day",greeting
+"yo",greeting
+"sup",greeting
+"hi quick question",greeting
+"hello quick question",greeting
+"hi can i ask something",greeting
+"hey i have a problem",greeting
+"hello i need assistance",greeting
+"hi i need support",greeting
+"hello i need support",greeting
+"hey i need support",greeting
+"hi team",greeting
+"hello team",greeting
+"hey there support",greeting
+"hi is anyone there",greeting
+"hello are you there",greeting
+"hey are you available",greeting
+"hi can you check something",greeting
+"hello can you check something",greeting
+"hey i have an order question",greeting
+"hi i have an order question",greeting
+"hello i have an order question",greeting
+"hi i have a billing question",greeting
+"hello i have a billing question",greeting
+"hey i have a billing question",greeting
+"bye",goodbye
+"goodbye",goodbye
+"bye bye",goodbye
+"see you",goodbye
+"see you later",goodbye
+"talk to you later",goodbye
+"thanks bye",goodbye
+"ok bye",goodbye
+"alright goodbye",goodbye
+"good night",goodbye
+"have a good day",goodbye
+"have a nice day",goodbye
+"thanks, goodbye",goodbye
+"thank you bye",goodbye
+"that's all thanks",goodbye
+"all set thanks",goodbye
+"no more questions bye",goodbye
+"i'm done thanks",goodbye
+"cool thanks bye",goodbye
+"great bye",goodbye
+"ok that's it",goodbye
+"we're good bye",goodbye
+"i'll leave it there",goodbye
+"closing this now",goodbye
+"bye for now",goodbye
+"catch you later",goodbye
+"ok see ya",goodbye
+"see ya later",goodbye
+"later",goodbye
+"peace out",goodbye
+"thanks for the help bye",goodbye
+"thanks for your time goodbye",goodbye
+"appreciate it bye",goodbye
+"thank you, have a good one",goodbye
+"thanks, i'm good now",goodbye
+"ok i'm good",goodbye
+"that's everything bye",goodbye
+"done, thanks",goodbye
+"goodbye and thanks",goodbye
+"bye and thanks",goodbye
+"where is my order",track_order
+"can you track my order",track_order
+"track my package",track_order
+"what's the status of my order",track_order
+"order status please",track_order
+"has my order shipped",track_order
+"when will my order arrive",track_order
+"what is the ETA for delivery",track_order
+"i need shipping updates",track_order
+"any update on my delivery",track_order
+"my package hasn't arrived yet",track_order
+"my order is late",track_order
+"delivery delayed?",track_order
+"why is shipping taking so long",track_order
+"can i get the tracking number",track_order
+"tracking number not working",track_order
+"the tracking link doesn't work",track_order
+"it says delivered but i didn't receive it",track_order
+"marked delivered but not here",track_order
+"my order shows delivered but it's missing",track_order
+"where is order 12345",track_order
+"track order 12345",track_order
+"status for order #12345",track_order
+"check shipment for order 98765",track_order
+"can you locate my shipment",track_order
+"help me find my package",track_order
+"i want to know where my package is",track_order
+"can you check my delivery status",track_order
+"shipping status for my purchase",track_order
+"when is it getting delivered",track_order
+"do you have an estimated delivery date",track_order
+"my shipment hasn't moved in days",track_order
+"tracking hasn't updated",track_order
+"why hasn't tracking updated",track_order
+"does this order have tracking",track_order
+"is my order in transit",track_order
+"what carrier is delivering my order",track_order
+"can you confirm my order shipped",track_order
+"i think my package is stuck",track_order
+"any progress on shipping",track_order
+"i want a refund",return_refund
+"can i get a refund",return_refund
+"how do i request a refund",return_refund
+"i want to return my item",return_refund
+"how do i return an item",return_refund
+"start a return",return_refund
+"help me with a return",return_refund
+"refund my order please",return_refund
+"i need a return label",return_refund
+"can you send a return label",return_refund
+"my item arrived damaged i want a refund",return_refund
+"the product is defective can i return it",return_refund
+"i received the wrong item i need a refund",return_refund
+"wrong size i need to return it",return_refund
+"this doesn't fit can i return it",return_refund
+"i changed my mind i want to return it",return_refund
+"return policy question",return_refund
+"what is your return policy",return_refund
+"how long do refunds take",return_refund
+"when will i receive my refund",return_refund
+"refund status",return_refund
+"where is my refund",return_refund
+"i returned it, where is my money",return_refund
+"can i exchange this item",return_refund
+"i want an exchange",return_refund
+"can i return order 12345",return_refund
+"refund for order #12345",return_refund
+"i need to return order 98765",return_refund
+"i want to return part of my order",return_refund
+"can i return a used item",return_refund
+"i opened it, can i still return it",return_refund
+"my return was delivered to you",return_refund
+"you received my return, refund me",return_refund
+"the return label is not printing",return_refund
+"i can't download the return label",return_refund
+"i want to return this as soon as possible",return_refund
+"refund me for the shipping too",return_refund
+"do you refund shipping fees",return_refund
+"how do i send the item back",return_refund
+"return instructions please",return_refund
+"i want to cancel my order",cancel_order
+"cancel my order please",cancel_order
+"can you cancel order 12345",cancel_order
+"please cancel order #12345",cancel_order
+"i placed an order by mistake cancel it",cancel_order
+"i need to stop this order",cancel_order
+"can i cancel before it ships",cancel_order
+"cancel my purchase",cancel_order
+"i want to change my order cancel it",cancel_order
+"please cancel the shipment",cancel_order
+"i want to cancel and get a refund",cancel_order
+"how do i cancel an order",cancel_order
+"cancel request",cancel_order
+"i no longer want this order",cancel_order
+"i ordered the wrong item cancel",cancel_order
+"can you stop the order processing",cancel_order
+"please void my order",cancel_order
+"i need to cancel ASAP",cancel_order
+"i want to cancel because of delivery time",cancel_order
+"cancel due to wrong address",cancel_order
+"i entered the wrong shipping address cancel",cancel_order
+"cancel order 98765",cancel_order
+"cancel #98765",cancel_order
+"can you cancel my subscription order",cancel_order
+"i want to cancel one item from my order",cancel_order
+"remove an item and cancel the rest",cancel_order
+"i want to cancel part of the order",cancel_order
+"please cancel before dispatch",cancel_order
+"cancel before dispatching",cancel_order
+"is it too late to cancel",cancel_order
+"can i still cancel it",cancel_order
+"cancel my order it hasn't shipped yet",cancel_order
+"i need to cancel, it was a duplicate order",cancel_order
+"accidentally ordered twice, cancel one",cancel_order
+"please cancel the duplicate order",cancel_order
+"stop the order",cancel_order
+"halt my order",cancel_order
+"cancel and confirm by email",cancel_order
+"i want confirmation of cancellation",cancel_order
+"cancel order and refund me",cancel_order
+"my payment failed",payment_issue
+"payment not going through",payment_issue
+"i can't pay",payment_issue
+"checkout is not working",payment_issue
+"my card was declined",payment_issue
+"it says payment declined",payment_issue
+"i got an error when paying",payment_issue
+"payment error at checkout",payment_issue
+"my credit card won't work",payment_issue
+"can i use a different payment method",payment_issue
+"do you accept paypal",payment_issue
+"do you accept apple pay",payment_issue
+"do you take gift cards",payment_issue
+"i was charged twice",payment_issue
+"double charged on my card",payment_issue
+"i see a duplicate charge",payment_issue
+"i was billed but the order didn't go through",payment_issue
+"charged but no order confirmation",payment_issue
+"my payment went through but order failed",payment_issue
+"i didn't receive a receipt but i was charged",payment_issue
+"why is there a pending charge",payment_issue
+"pending charge question",payment_issue
+"can you remove this charge",payment_issue
+"refund the extra charge",payment_issue
+"payment method was rejected",payment_issue
+"bank blocked the transaction",payment_issue
+"3d secure failed",payment_issue
+"i forgot my billing zip code",payment_issue
+"billing address doesn't match",payment_issue
+"cvv error",payment_issue
+"promo code not working",payment_issue
+"discount code won't apply",payment_issue
+"gift card not working",payment_issue
+"why can't i apply my coupon",payment_issue
+"i can't complete checkout",payment_issue
+"checkout page keeps loading",payment_issue
+"payment keeps failing",payment_issue
+"why is my card being declined",payment_issue
+"my order won't submit after payment",payment_issue
+"need help paying for my order",payment_issue
+"is it safe to enter my card details",payment_issue
+"does this come in a larger size",product_question
+"does this come in a smaller size",product_question
+"what sizes are available",product_question
+"is this item in stock",product_question
+"when will this be back in stock",product_question
+"does this work with iphone",product_question
+"is this compatible with android",product_question
+"what are the dimensions",product_question
+"what is the material",product_question
+"what color options do you have",product_question
+"can you tell me about this product",product_question
+"i have a question about the product",product_question
+"does it include a warranty",product_question
+"how long is the warranty",product_question
+"is there a user manual",product_question
+"how do i use this item",product_question
+"is this authentic",product_question
+"is this original",product_question
+"can you confirm if it's genuine",product_question
+"does this require batteries",product_question
+"are batteries included",product_question
+"what is the voltage",product_question
+"is this waterproof",product_question
+"can it be washed",product_question
+"is it machine washable",product_question
+"how much does it weigh",product_question
+"what is the weight",product_question
+"does it come with accessories",product_question
+"what's in the box",product_question
+"does it support bluetooth",product_question
+"does it have wifi",product_question
+"can i use it outdoors",product_question
+"is it good for kids",product_question
+"is it safe for children",product_question
+"what is the return window for this product",product_question
+"can you share more specifications",product_question
+"tell me the specs",product_question
+"what is the model number",product_question
+"is there a sizing chart",product_question
+"can you help",other
+"i need help",other
+"help me",other
+"i have a question",other
+"i have an issue",other
+"something is wrong",other
+"this isn't working",other
+"can you assist",other
+"please clarify",other
+"what do you mean",other
+"i don't understand",other
+"not sure what to do",other
+"can you explain",other
+"i need to speak to a person",other
+"human agent please",other
+"representative please",other
+"connect me to support",other
+"i have a complaint",other
+"this is frustrating",other
+"i am unhappy",other
+"your website is broken",other
+"the app is not working",other
+"i can't log in",other
+"my account is locked",other
+"change my email address",other
+"update my account details",other
+"how do i reset my password",other
+"password reset help",other
+"how do i create an account",other
+"delete my account",other
+"unsubscribe me",other
+"stop sending emails",other
+"i want to leave feedback",other
+"i have feedback",other
+"thank you",goodbye
+"thanks",goodbye
+"ok",other
+"cool",other
+"what are your hours",other
+"how can i contact you",other
+"where are you located",other
+"do you have a phone number",other
+"can you call me",other

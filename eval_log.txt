@@ -1,0 +1,20 @@
+Accuracy: 0.8000
+
+Classification Report:
+
+                  precision    recall  f1-score   support
+
+    cancel_order       1.00      1.00      1.00         8
+         goodbye       0.73      1.00      0.84         8
+        greeting       0.83      0.62      0.71         8
+           other       0.57      0.44      0.50         9
+   payment_issue       0.88      0.88      0.88         8
+product_question       0.67      1.00      0.80         8
+   return_refund       1.00      0.75      0.86         8
+     track_order       0.86      0.75      0.80         8
+
+        accuracy                           0.80        65
+       macro avg       0.82      0.81      0.80        65
+    weighted avg       0.81      0.80      0.79        65
+
+✅ Confusion matrix saved to /Users/kaanalemdar/.gemini/antigravity/scratch/intelligent_assistant/metrics/confusion_matrix.png
