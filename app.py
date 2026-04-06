@@ -8,93 +8,165 @@ sys.path.append(BASE_DIR)
 
 from src.inference import IntentClassifier, get_bot_response
 
-def inject_custom_css():
+def inject_professional_css():
     st.markdown("""
         <style>
-        .stChatInput { padding-bottom: 20px; }
-        .intent-badge {
-            display: inline-block;
-            padding: 0.25em 0.6em;
-            font-size: 0.75em;
-            font-weight: 700;
-            line-height: 1;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: baseline;
-            border-radius: 0.375rem;
-            background-color: #2ea043;
-            color: #ffffff;
-            margin-bottom: 15px;
-            margin-top: 5px;
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        
+        html, body, [class*="css"] {
+            font-family: 'Inter', sans-serif;
         }
-        .main-header {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: -webkit-linear-gradient(45deg, #FF4B2B, #FF416C);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0px;
+        
+        /* Hide default streamlit elements */
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        header {visibility: hidden;}
+        
+        /* Header styling */
+        .brand-header {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1a1f36;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .brand-subtitle {
+            font-size: 0.95rem;
+            color: #697386;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        /* Diagnostic Pill for intent */
+        .diagnostic-pill {
+            display: inline-flex;
+            align-items: center;
+            background-color: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            color: #4b5563;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-top: 4px;
+            letter-spacing: 0.025em;
+        }
+        
+        .confidence-indicator {
+            height: 6px;
+            border-radius: 3px;
+            background-color: #e5e7eb;
+            width: 100px;
+            margin-left: 8px;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .confidence-fill {
+            height: 100%;
+            background-color: #6366f1;
+        }
+        
+        /* Customizing chat inputs and UI */
+        .stChatInputContainer {
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* Sidebar styling */
+        .sidebar-title {
+            font-weight: 600;
+            color: #111827;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .sidebar-text {
+            font-size: 0.85rem;
+            color: #4b5563;
+            line-height: 1.5;
         }
         </style>
     """, unsafe_allow_html=True)
 
 def main():
-    st.set_page_config(page_title="AI Customer Support", page_icon="🎧", layout="wide")
-    inject_custom_css()
+    st.set_page_config(page_title="Support Center", page_icon="🏢", layout="centered")
+    inject_professional_css()
     
-    # Sidebar
+    # Advanced Sidebar Menu
     with st.sidebar:
-        st.image("https://cdn-icons-png.flaticon.com/512/4712/4712010.png", width=100)
-        st.title("Project Details")
-        st.markdown("Welcome to the **Intelligent Customer Support Tool** built for the AI Final Project.")
-        st.markdown("---")
-        st.markdown("### Supported Intents:")
+        st.markdown("<div class='brand-header'>Support CRM</div>", unsafe_allow_html=True)
+        st.markdown("<div class='sidebar-text'>Agent Console v1.2</div>", unsafe_allow_html=True)
+        st.divider()
+        st.markdown("<div class='sidebar-title'>🔍 System Diagnostics</div>", unsafe_allow_html=True)
+        st.markdown("<div class='sidebar-text'>Backend: NLU Engine (v1)</div>", unsafe_allow_html=True)
+        st.markdown("<div class='sidebar-text'>Model: Logistic Regression</div>", unsafe_allow_html=True)
+        st.markdown("<div class='sidebar-text'>Vectorization: TF-IDF (n-gram: 1,2)</div>", unsafe_allow_html=True)
+        
+        st.markdown("<div class='sidebar-title'>🏷️ Detected Routing Classes</div>", unsafe_allow_html=True)
         st.markdown("""
-        - 📦 **track_order**
-        - 🔄 **return_refund**
-        - 💳 **payment_issue**
-        - ❌ **cancel_order**
-        - ❓ **product_question**
-        - 👋 **greeting / goodbye**
-        - 💬 **other**
-        """)
-        st.markdown("---")
-        st.caption("Powered by TF-IDF & Logistic Regression")
+        <div class='sidebar-text'>
+        • track_order<br>
+        • return_refund<br>
+        • payment_issue<br>
+        • cancel_order<br>
+        • product_question<br>
+        • greeting / goodbye<br>
+        • other
+        </div>
+        """, unsafe_allow_html=True)
+        
+        st.divider()
+        st.caption("© 2026 Corporate Support Solutions")
 
     # Main Area
-    st.markdown('<p class="main-header">🎧 Intelligent Assistant</p>', unsafe_allow_html=True)
-    st.markdown("Ask me anything about your orders, payments, or products!")
+    st.markdown('<div class="brand-header">Customer Integration Center</div>', unsafe_allow_html=True)
+    st.markdown('<div class="brand-subtitle">Automated resolution and intelligent routing module</div>', unsafe_allow_html=True)
     
     # Initialize the model only once
     if "classifier" not in st.session_state:
         try:
-            with st.spinner("Loading ML Models..."):
+            with st.spinner("Initializing NLU Engine..."):
                 st.session_state.classifier = IntentClassifier()
         except Exception as e:
             st.error(f"Error loading model: {e}")
-            st.warning("Did you run `python src/train.py`?")
             return
 
     # Chat interface Initial Message
     if "messages" not in st.session_state:
         st.session_state.messages = [
-            {"role": "assistant", "content": "Hi there! I'm your AI Support Agent. How can I assist you today?", "meta": None}
+            {"role": "assistant", "content": "Hello, how can we assist you with your service experience today?", "meta": None}
         ]
         
     for msg in st.session_state.messages:
-        with st.chat_message(msg["role"]):
+        avatar = "🧑‍💻" if msg["role"] == "user" else "💬"
+        with st.chat_message(msg["role"], avatar=avatar):
             st.markdown(msg["content"])
-            if msg.get("meta"):
+            if msg.get("meta") and msg["role"] == "assistant":
                 intent, conf = msg["meta"]
-                st.markdown(f'<span class="intent-badge">Detected Intent: {intent}</span>', unsafe_allow_html=True)
-                if msg["role"] == "assistant":
-                    st.progress(float(conf), text=f"Model Confidence Score: {conf*100:.1f}%")
+                
+                # Professional diagnostic pill instead of loud progress bar
+                fill_width = int(conf * 100)
+                html_str = f"""
+                <div class="diagnostic-pill">
+                    Routing: {intent}
+                    <div class="confidence-indicator">
+                        <div class="confidence-fill" style="width: {fill_width}%;"></div>
+                    </div>
+                    <span style="margin-left:6px; color:#9ca3af; font-size:10px;">{fill_width}%</span>
+                </div>
+                """
+                st.markdown(html_str, unsafe_allow_html=True)
             
     # Input
-    user_input = st.chat_input("E.g., 'Where is my order?' or 'I want a refund'")
+    user_input = st.chat_input("Start typing...")
     if user_input:
         # Display user msg
-        with st.chat_message("user"):
+        with st.chat_message("user", avatar="🧑‍💻"):
             st.markdown(user_input)
         st.session_state.messages.append({"role": "user", "content": user_input, "meta": None})
         
@@ -103,10 +175,20 @@ def main():
         response = get_bot_response(intent)
         
         # Display bot msg
-        with st.chat_message("assistant"):
+        with st.chat_message("assistant", avatar="💬"):
             st.markdown(response)
-            st.markdown(f'<span class="intent-badge">Detected Intent: {intent}</span>', unsafe_allow_html=True)
-            st.progress(float(confidence), text=f"Model Confidence Score: {confidence*100:.1f}%")
+            
+            fill_width = int(confidence * 100)
+            html_str = f"""
+            <div class="diagnostic-pill">
+                Routing: {intent}
+                <div class="confidence-indicator">
+                    <div class="confidence-fill" style="width: {fill_width}%;"></div>
+                </div>
+                <span style="margin-left:6px; color:#9ca3af; font-size:10px;">{fill_width}%</span>
+            </div>
+            """
+            st.markdown(html_str, unsafe_allow_html=True)
 
         st.session_state.messages.append({"role": "assistant", "content": response, "meta": (intent, confidence)})
 
